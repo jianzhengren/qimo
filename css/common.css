@@ -1,0 +1,42 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-style: normal;
+	font-family: "微软雅黑";
+}
+
+body,html{
+	width: 100%;
+	height: 100%;
+	background: #231825;
+}
+.page{
+	width: 100%;
+	height: 100%;
+}
+#main{
+	width: 60%;
+	height: 600px;
+	margin-top: 30px;
+	float: left;
+}
+#mains{
+	width:100%;
+	height: 800px;
+	background: #231825;
+}
+h3{
+	width: 100%;
+	padding: 10px 0;
+	text-align: center;
+	color: #fff;
+}
+.zj{
+	width: 40%;
+	padding: 10px 0;
+	float: left;
+	text-align: center;
+}
+.zj>img{
+	height: 400px;
+}
