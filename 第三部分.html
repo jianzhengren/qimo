@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>曲风-音乐人</title>
+		<!-- 引入刚刚下载的 ECharts 文件 -->
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<script src="js/echarts.min.js"></script>
+		<script src="js/vintage.js"></script>
+		<script src="json/json.js"></script>
+	</head>
+
+	<body>
+		<!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+		<div id="mains"></div>
+		<script type="text/javascript">
+			var myChart = echarts.init(document.getElementById('mains'), 'vintage');
+
+			// 指定图表的配置项和数据
+			var option = {
+				color: settings.theme.color,
+				backgroundColor:settings.theme.backgroundColor,
+				textStyle: {
+					color:settings.theme.titleColor,
+					fontstyle: 'italic'
+				},
+				title: {
+					text: "曲风--音乐人",
+					left: "center",
+					top: "top",
+					textStyle: {
+						fontSize: 20,
+						color:settings.theme.titleColor
+					},
+				},
+				tooltip: {
+					trigger: "item",
+					triggerOn: "mousemove"
+				},
+				series: {
+					type: 'sankey',
+					layout: 'none',
+					lineStyle:{
+						color:settings.theme.titleColor
+					},
+					emphasis: {
+						focus: 'adjacency'
+					},
+					data: [{
+							name: '二十世纪三十年代-六七十年代'
+						},
+						{
+							name: '六七十年代-九十年代'
+						},
+						{
+							name: '九十年代-千禧年'
+						},
+						{
+							name: '2000年-至今'
+						},
+						{
+							name: '黎锦晖'
+						},
+						{
+							name: '周璇'
+						},
+						{
+							name: '邓丽君'
+						},
+						{
+							name: '崔健'
+						},
+						{
+							name: '罗大佑'
+						},
+						{
+							name: '谭咏麟'
+						},
+						{
+							name: '张国荣'
+						},
+						{
+							name: '梅艳芳'
+						},
+						{
+							name: '许巍'
+						},
+						{
+							name: '黄家驹'
+						},
+						{
+							name: '李宗盛'
+						},
+						{
+							name: '张学友'
+						},
+						{
+							name: '那英'
+						},
+						{
+							name: '周杰伦'
+						},
+						{
+							name: '凤凰传奇'
+						},
+						{
+							name: '陈奕迅'
+						},
+						{
+							name: '蔡依林'
+						},
+						{
+							name: '民歌'
+						},
+						{
+							name: '摇滚'
+						},
+						{
+							name: '流行'
+						},
+						{
+							name: '爵士'
+						},
+						{
+							name: 'Pop'
+						},
+						{
+							name: 'R&B'
+						},
+						{
+							name: 'rap'
+						},
+					],
+					links: [{
+							source: '二十世纪三十年代-六七十年代',
+							target: '黎锦晖',
+							value: 2
+						},
+						{
+							source: '二十世纪三十年代-六七十年代',
+							target: '周璇',
+							value: 2
+						},
+						{
+							source: '六七十年代-九十年代',
+							target: '邓丽君',
+							value: 6
+						},
+						{
+							source: '六七十年代-九十年代',
+							target: '崔健',
+							value: 6
+						},
+						{
+							source: '六七十年代-九十年代',
+							target: '罗大佑',
+							value: 6
+						},
+						{
+							source: '六七十年代-九十年代',
+							target: '谭咏麟',
+							value: 6
+						},
+						{
+							source: '六七十年代-九十年代',
+							target: '张国荣',
+							value: 6
+						},
+						{
+							source: '六七十年代-九十年代',
+							target: '梅艳芳',
+							value: 6
+						},
+						{
+							source: '九十年代-千禧年',
+							target: '许巍',
+							value: 5
+						},
+						{
+							source: '九十年代-千禧年',
+							target: '黄家驹',
+							value: 5
+						},
+						{
+							source: '九十年代-千禧年',
+							target: '李宗盛',
+							value: 5
+						},
+						{
+							source: '九十年代-千禧年',
+							target: '张学友',
+							value: 5
+						},
+						{
+							source: '九十年代-千禧年',
+							target: '那英',
+							value: 5
+						},
+						{
+							source: '2000年-至今',
+							target: '周杰伦',
+							value: 4
+						},
+						{
+							source: '2000年-至今',
+							target: '凤凰传奇',
+							value: 4
+						},
+						{
+							source: '2000年-至今',
+							target: '陈奕迅',
+							value: 4
+						},
+						{
+							source: '2000年-至今',
+							target: '蔡依林',
+							value: 4
+						},
+						{
+							source: '黎锦晖',
+							target: '民歌',
+							value: 50
+						},
+						{
+							source: '周璇',
+							target: '民歌',
+							value: 50
+						},
+						{
+							source: '周璇',
+							target: 'Pop',
+							value: 25
+						},
+						{
+							source: '邓丽君',
+							target: '民歌',
+							value: 60
+						},
+						{
+							source: '邓丽君',
+							target: 'Pop',
+							value: 30
+						},
+						{
+							source: '崔健',
+							target: '民歌',
+							value: 20
+						},
+						{
+							source: '崔健',
+							target: '摇滚',
+							value: 50
+						},
+						{
+							source: '崔健',
+							target: 'rap',
+							value: 15
+						},
+						{
+							source: '崔健',
+							target: 'R&B',
+							value: 15
+						},
+						{
+							source: '罗大佑',
+							target: '民歌',
+							value: 25
+						},
+						{
+							source: '罗大佑',
+							target: '摇滚',
+							value: 20
+						},
+						{
+							source: '罗大佑',
+							target: 'Pop',
+							value: 50
+						},
+						{
+							source: '谭咏麟',
+							target: '摇滚',
+							value: 50
+						},
+						{
+							source: '谭咏麟',
+							target: 'Pop',
+							value: 35
+						},
+						{
+							source: '张国荣',
+							target: 'Pop',
+							value: 50
+						},
+						{
+							source: '梅艳芳',
+							target: '民歌',
+							value: 35
+						},
+						{
+							source: '梅艳芳',
+							target: 'Pop',
+							value: 50
+						},
+						{
+							source: '许巍',
+							target: '摇滚',
+							value: 50
+						},
+						{
+							source: '黄家驹',
+							target: '摇滚',
+							value: 50
+						},
+						{
+							source: '黄家驹',
+							target: '民歌',
+							value: 25
+						},
+						{
+							source: '黄家驹',
+							target: '流行',
+							value: 25
+						},
+						{
+							source: '黄家驹',
+							target: '爵士',
+							value: 5
+						},
+						{
+							source: '李宗盛',
+							target: '民歌',
+							value: 20
+						},
+						{
+							source: '李宗盛',
+							target: 'Pop',
+							value: 50
+						},
+						{
+							source: '张学友',
+							target: '摇滚',
+							value: 20
+						},
+						{
+							source: '张学友',
+							target: '民谣',
+							value: 15
+						},
+						{
+							source: '张学友',
+							target: 'R&B',
+							value: 25
+						},
+						{
+							source: '张学友',
+							target: '爵士',
+							value: 25
+						},
+						{
+							source: '张学友',
+							target: '流行',
+							value: 35
+						},
+						{
+							source: '张学友',
+							target: 'Pop',
+							value: 50
+						},
+						{
+							source: '那英',
+							target: '民歌',
+							value: 15
+						},
+						{
+							source: '那英',
+							target: '流行',
+							value: 50
+						},
+						{
+							source: '那英',
+							target: 'Pop',
+							value: 56
+						},
+						{
+							source: '周杰伦',
+							target: 'R&B',
+							value: 70
+						},
+						{
+							source: '周杰伦',
+							target: '流行',
+							value: 70
+						},
+						{
+							source: '周杰伦',
+							target: '爵士',
+							value: 55
+						},
+						{
+							source: '周杰伦',
+							target: '民歌',
+							value: 35
+						},
+						{
+							source: '周杰伦',
+							target: 'rap',
+							value: 45
+						},
+						{
+							source: '凤凰传奇',
+							target: '摇滚',
+							value: 35
+						},
+						{
+							source: '凤凰传奇',
+							target: '民歌',
+							value: 55
+						},
+						{
+							source: '凤凰传奇',
+							target: 'rap',
+							value: 25
+						},
+						{
+							source: '陈奕迅',
+							target: '民歌',
+							value: 15
+						},
+						{
+							source: '陈奕迅',
+							target: 'R&B',
+							value: 50
+						},
+						{
+							source: '陈奕迅',
+							target: '爵士',
+							value: 30
+						},
+						{
+							source: '陈奕迅',
+							target: 'rap',
+							value: 15
+						},
+						{
+							source: '陈奕迅',
+							target: 'Pop',
+							value: 50
+						},
+						{
+							source: '蔡依林',
+							target: '流行',
+							value: 40
+						},
+						{
+							source: '蔡依林',
+							target: '爵士',
+							value: 20
+						},
+						{
+							source: '蔡依林',
+							target: 'Pop',
+							value: 60
+						},
+					],
+				},
+			};
+			myChart.setOption(option);
+		</script>
+	</body>
+
+</html>

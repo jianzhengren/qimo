@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>中国近代音乐发展史</title>
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+	</head>
+
+	<body>
+
+		<div id="container">
+			<div class="chart-div" id="treeChart">
+				<div class="chart-loader">
+					<div class="loader"></div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/jquery.js"></script>
+		<script src="js/echarts.min.js"></script>
+		<script src="json/json.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				const treeChart = echarts.init(document.getElementById("treeChart"), 'shine');
+
+				const treeData1 = {
+					name: '五四时期',
+					symbolSize: 20,
+					itemStyle: {
+						color: '#d4237a'
+					},
+					label: {
+						fontSize: 20
+					},
+					children: [{
+							name: '萧友梅',
+							symbolSize: 20,
+							itemStyle: {
+								color: '#d4237a'
+							},
+							children: [{
+									name: '五四纪念爱国歌-当时的时代语境下作曲家努力突破时代局限，向“救亡”所发出的呐喊',
+									itemStyle: {
+										color: '#d4237a'
+									}
+								},
+
+							]
+						},
+						{
+							name: '赵元任',
+							symbolSize: 20,
+							itemStyle: {
+								color: '#d4237a'
+							},
+							children: [{
+									name: '海韵-赵元任更多地关注于对小人物命运的同情和个人个性的解放',
+									itemStyle: {
+										color: '#d4237a'
+									}
+								},
+
+							]
+						}
+					]
+				};
+				const treeData2 = {
+					name: '20世纪30年代',
+					symbolSize: 10,
+					itemStyle: {
+						color: '#e6b600'
+					},
+					label: {
+						fontSize: 14
+					},
+					children: [{
+							name: '聂耳',
+							symbolSize: 8,
+							itemStyle: {
+								color: '#e6b600'
+							},
+							children: [{
+									name: '义勇军进行曲-诞生于中华民族生死存亡关头',
+									itemStyle: {
+										color: '#e6b600'
+									}
+								},
+								{
+									name: '卖报歌',
+									itemStyle: {
+										color: '#e6b600'
+									}
+								},
+							]
+						},
+
+					]
+				};
+
+				const treeData3 = {
+					name: '20世纪40~50年代',
+					symbolSize: 10,
+					itemStyle: {
+						color: '#339ca8'
+					},
+					label: {
+						fontSize: 14
+					},
+					children: [{
+							name: '周璇',
+							symbolSize: 8,
+							itemStyle: {
+								color: '#339ca8'
+							},
+							children: [{
+									name: '夜上海-体现当时上海国际都市',
+									itemStyle: {
+										color: '#339ca8'
+									}
+								},
+
+							]
+						},
+						{
+							name: '郭英兰',
+							symbolSize: 8,
+							itemStyle: {
+								color: '#339ca8'
+							},
+							children: [{
+									name: '我的祖国',
+									itemStyle: {
+										color: '#339ca8'
+									}
+								},
+								{
+									name: '一道道山水来',
+									itemStyle: {
+										color: '#339ca8'
+									}
+								},
+
+							]
+						},
+						{
+							name: '吴雁泽',
+							symbolSize: 8,
+							itemStyle: {
+								color: '#339ca8'
+							},
+							children: [{
+									name: '草原上升起的不落太阳',
+									itemStyle: {
+										color: '#339ca8'
+									}
+								},
+
+							]
+						},
+						{
+							name: '郭颂',
+							itemStyle: {
+								color: '#339ca8'
+							},
+							symbolSize: 8,
+							children: [{
+									name: '新货郎',
+									itemStyle: {
+										color: '#339ca8'
+									}
+								},
+
+							]
+						}
+					]
+				};
+				const treeData4 = {
+					name: '20世纪50~80年代（百花争鸣）',
+					symbolSize: 10,
+					itemStyle: {
+						color: '#7760f6'
+					},
+					label: {
+						fontSize: 14
+					},
+					children: [{
+							name: '邓丽君',
+							symbolSize: 8,
+							itemStyle: {
+								color: '#7760f6'
+							},
+							children: [{
+									name: '甜蜜蜜',
+									itemStyle: {
+										color: '#7760f6'
+									}
+								},
+								{
+									name: '阿里山的姑凉',
+									itemStyle: {
+										color: '#7760f6'
+									}
+								},
+								{
+									name: '我只在乎你',
+									itemStyle: {
+										color: '#7760f6'
+									}
+								},
+
+							]
+						},
+						{
+							name: '叶丽仪',
+							symbolSize: 8,
+							itemStyle: {
+								color: '#7760f6'
+							},
+							children: [{
+									name: '上海滩',
+									itemStyle: {
+										color: '#7760f6'
+									}
+								},
+								{
+									name: '万般情',
+									itemStyle: {
+										color: '#7760f6'
+									}
+								}
+							]
+						},
+						{
+							name: '叶启田',
+							symbolSize: 8,
+							itemStyle: {
+								color: '#7760f6'
+							},
+							children: [{
+									name: '爱拼才会赢',
+									itemStyle: {
+										color: '#7760f6'
+									}
+								},
+								{
+									name: '浪子的心情',
+									itemStyle: {
+										color: '#7760f6'
+									}
+								},
+								{
+									name: '男性的本领',
+									itemStyle: {
+										color: '#7760f6'
+									}
+								}
+							]
+						}
+					]
+				};
+				const treeData5 = {
+					name: '20世纪80年代后（百花齐放）',
+					symbolSize: 10,
+					itemStyle: {
+						color: '#005eaa'
+					},
+					label: {
+						fontSize: 14
+					},
+					children: [{
+							name: '林忆莲',
+							symbolSize: 8,
+							itemStyle: {
+								color: '#005eaa'
+							},
+							children: [{
+									name: '爱上一个不回家的人',
+									itemStyle: {
+										color: '#005eaa'
+									}
+								},
+								{
+									name: '至少还有你',
+									itemStyle: {
+										color: '#005eaa'
+									}
+								},
+								{
+									name: '远走高飞',
+									itemStyle: {
+										color: '#005eaa'
+									}
+								},
+							]
+						},
+						{
+							name: '林俊杰',
+							symbolSize: 8,
+							itemStyle: {
+								color: '#005eaa'
+							},
+							children: [{
+									name: '美人鱼',
+									itemStyle: {
+										color: '#005eaa'
+									}
+								},
+								{
+									name: '江南',
+									itemStyle: {
+										color: '#005eaa'
+									}
+								},
+								{
+									name: '可惜没如果',
+									itemStyle: {
+										color: '#005eaa'
+									}
+								},
+								{
+									name: '那些年很冒险的梦',
+									itemStyle: {
+										color: '#005eaa'
+									}
+								},
+
+							]
+						},
+						{
+							name: '邓紫棋',
+							symbolSize: 8,
+							itemStyle: {
+								color: '#005eaa'
+							},
+							children: [{
+									name: '泡沫',
+									itemStyle: {
+										color: '#005eaa'
+									}
+								},
+								{
+									name: '睡公主',
+									itemStyle: {
+										color: '#005eaa'
+									}
+								},
+								{
+									name: '新的心跳',
+									itemStyle: {
+										color: '#005eaa'
+									}
+								},
+
+							]
+						},
+
+					]
+				};
+				const treeData = {
+					name: '不同时期音乐代表人',
+					symbolSize: 12,
+					label: {
+						fontSize: 16
+					},
+					children: [
+						treeData1,
+						treeData2,
+						treeData3,
+						treeData4,
+						treeData5
+					]
+				};
+				const treeChartOpt = {
+					title: {
+						text: "中国近代音乐发展史",
+						subtext: "数据如下",
+						textStyle: {
+							color: settings.theme.titleColor
+						},
+						subtextStyle: {
+							color: settings.theme.subtitleColor
+						},
+						left: 15,
+						top: 15
+					},
+					series: [{
+						color: settings.theme.color,
+						name: '不同时期音乐代表人',
+						type: 'tree',
+						left: '5%',
+						right: '20%',
+						top: '1%',
+						bottom: '1%',
+						orient: 'LR', //方向
+						initialTreeDepth: 0, //深度
+						symbol: 'circle',
+						itemStyle: {
+							color: '#ab2042',
+							borderColor: '#9aa8d4'
+						},
+						lineStyle: {
+							width: 1,
+							curveness: .9
+						},
+						label: {
+							color: '#9aa8d4',
+							position: 'bottom'
+						},
+						leaves: {
+							label: {
+								position: 'right'
+							}
+						},
+						data: [treeData]
+					}]
+				};
+				treeChart.setOption(treeChartOpt);
+
+				//动态逐层级显示
+				let deep = 1;
+				let intervalId = window.setInterval(function() {
+					treeChart.setOption({
+						series: [{
+							name: '中国近代音乐发展史',
+							initialTreeDepth: deep++
+						}]
+					});
+					if(deep > 3) {
+						window.clearInterval(intervalId);
+					}
+				}, 1000);
+
+				//浏览器窗口发生变化时，重置报表大小
+				$(window).resize(function() {
+					treeChart.resize();
+				});
+			});
+		</script>
+	</body>
+
+</html>

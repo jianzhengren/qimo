@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>华语乐坛歌手单曲YouTube破千万播放量</title>
+		<!-- 引入刚刚下载的 ECharts 文件 -->
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<script src="js/echarts.min.js"></script>
+		<script src="js/vintage.js"></script>
+		<script src="json/json.js"></script>
+	</head>
+
+	<body>
+		<!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+		<div id="mains"></div>
+		<script type="text/javascript">
+			var myChart = echarts.init(document.getElementById('mains'), 'json');
+            const data = [
+  [
+    [121000000, 42, 3000000000, '周杰伦', '男'],
+    [81760000, 20, 1400000000,'五月天', '男'],
+    [125000000, 16, 1300000000, '林俊杰', '男'],
+    [93900000, 8, 1000000000, '薛之谦', '男'],
+    [42260000, 6, 800000000, '苏打绿', '男'],
+    [20900000, 5, 700000000, '陈奕迅', '男'],
+    [50640000, 5, 700000000, '李荣浩', '男'],
+    [14570000, 4, 60000000, '筷子兄弟', '男'],
+    [24880000, 3, 50000000, '罗志祥', '男'],
+    [20750000, 3, 50000000, '萧敬腾', '男'],
+    [96460000, 3, 50000000, '王力宏', '男'],
+    [24110000, 2, 40000000, 'beyond', '男'],
+    [27190000, 2, 40000000, '华晨宇', '男'],
+    [34990000, 2, 40000000, '陈小春', '男'],
+    [11080000, 1, 20000000, '杨宗纬', '男'],
+    [11270000, 1, 20000000,'潘玮柏', '男'],
+    [17580000, 1, 20000000, '鹿晗', '男'],
+    [11960000, 1, 20000000, 'TFboys', '男']
+  ],
+  [
+    [91830000, 16, 1300000000, '邓紫棋', '女'],
+    [162000000, 12, 1200000000, '田馥甄', '女'],
+    [26730000, 5, 700000000, '蔡依林', '女'],
+    [34640000, 4, 60000000, '梁静茹', '女'],
+    [105000000, 2, 40000000, '张惠妹', '女'],
+    [20120000, 2, 40000000, '张韶涵', '女'],
+    [20900000, 1, 20000000, '王菲', '女'],
+    [24380000, 1, 20000000, '那英', '女'],
+    [19500000, 1, 20000000, '范玮琪', '女']
+  ]
+];
+
+			// 指定图表的配置项和数据
+			var option = { 
+  title: {
+    text: '华语乐坛歌手单曲YouTube破千万播放量',
+    left: '5%',
+    top: '3%'
+  },
+  legend: {
+    right: '10%',
+    top: '3%',
+    data: ['男', '女']
+  },
+  grid: {
+    left: '8%',
+    top: '10%',
+  },
+  xAxis: {
+    splitLine: {
+      lineStyle: {
+        type: 'dashed'
+      }
+    }
+  },
+  yAxis: {
+    splitLine: {
+      lineStyle: {
+        type: 'dashed'
+      }
+    },
+    scale: true
+  },
+  series: [
+    {
+      name: '男',
+      data: data[0],
+      type: 'scatter',
+      symbolSize: function (data) {
+        return Math.sqrt(data[2]) / 5e2;
+      },
+      emphasis: {
+        focus: 'series',
+        label: {
+          show: true,
+          formatter: function (param) {
+            return [param.data[3],
+            '破千万歌曲数量: ' + param.data[1],
+            '最高播放量: ' + param.data[0]
+          ];
+          },
+          position: 'top'
+        }
+      },
+      itemStyle: {
+        shadowBlur: 10,
+        shadowColor: 'rgba(96, 89, 132, 0.5)',
+        shadowOffsetY: 5,
+        color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [
+          {
+            offset: 0,
+            color: 'rgb(120, 106, 167)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(185, 166, 224)'
+          }
+        ])
+      }
+    },
+    {
+      name: '女',
+      data: data[1],
+      type: 'scatter',
+      symbolSize: function (data) {
+        return Math.sqrt(data[2]) / 5e2;
+      },
+      emphasis: {
+        focus: 'series',
+        label: {
+          show: true,
+          formatter: function (param) {
+            return [ param.data[3],
+            '破千万歌曲数量: ' + param.data[1],
+            '最高播放量: ' + param.data[0]
+          ];
+          },
+          position: 'top'
+        }
+      },
+      itemStyle: {
+        shadowBlur: 10,
+        shadowColor: 'rgba(164, 120, 138, 0.5)',
+        shadowOffsetY: 5,
+        color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [
+          {
+            offset: 0,
+            color: 'rgb(229, 166, 187)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(229, 166, 187)'
+          }
+        ])
+      }
+    },
+  ]
+};
+
+option && myChart.setOption(option);
+</script>
+</body>
+
+</html>
